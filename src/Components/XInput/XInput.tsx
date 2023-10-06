@@ -1,12 +1,15 @@
-import React from 'react';
-import styles from './XInput.module.css';
-import { XInputProps } from './XInputProps';
+import React from "react";
+import styles from "./XInput.module.css";
+import { XInputProps } from "./XInputProps";
+import { TextField } from "@mui/material";
 
-export const XInput = ({}: XInputProps) => {
+export const XInput = ({ inputStyle, onChangeText, ...rest }: XInputProps) => {
   return (
-    <div className={styles.container}>
-      <h1>XInput</h1>
-    </div>
+    <TextField
+      onChange={(e) => onChangeText(e.target.value)}
+      className={styles.input}
+      style={inputStyle}
+      {...rest}
+    />
   );
 };
-

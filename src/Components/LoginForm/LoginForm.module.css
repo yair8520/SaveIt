@@ -1,3 +1,27 @@
 .container {
-  /* Add your component styles here */
+  border-radius: 30px;
+  background-color: white;
+  min-width: 250px;
+  height: 70%;
+  width: 30%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 15px;
+  width: 100%
+}
+
+@media (max-width: 767px) {
+  .container {
+    height: 80%;
+    width: 80%;
+    padding: 20px;
+  }
 }

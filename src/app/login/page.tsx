@@ -1,11 +1,11 @@
-import { XButton } from "@/Components/XButton";
-import { Button } from "@mui/material";
-import Image from "next/image";
+import { LoginForm } from "@/Components/LoginForm";
 
+import styles from './Login.module.css'
 export default function Home() {
+  
   return (
-    <main>
-      <XButton />
-    </main>
+    <div className={styles.container}>
+      <LoginForm />
+    </div>
   );
 }
