@@ -1,0 +1,9 @@
+{
+    "exportall.config.relExclusion": [
+        "/src/Features/Auth/index.ts"
+    ],
+    "workbench.colorCustomizations": {
+        "tree.inactiveIndentGuidesStroke": "#ff0000",
+        "tree.indentGuidesStroke": "#008000"
+    }
+}

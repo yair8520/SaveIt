@@ -2,4 +2,6 @@
   /* Add your component styles here */
 }
 
-.input {}
+.input {
+  width: 100%;
+}
