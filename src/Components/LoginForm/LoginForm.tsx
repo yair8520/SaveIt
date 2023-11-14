@@ -21,21 +21,9 @@ import { getUserInfo } from "@/Features/Auth/AuthSelectors";
 export const LoginForm = ({}: LoginFormProps) => {
   const { t } = useTranslation();
   const router = useRouter();
-  const user = useAppSelector(getUserInfo);
-  console.log(user);
-  const [form, setForm] = useState<LoginFormState>(loginFormInit);
-  const [emailLoginSection, setEmailLoginSection] = useState(false);
-  const handleForm = (val: string, key: keyof ILoginForm) => {
-    setForm((prevForm) => ({
-      ...prevForm,
-      [key]: {
-        ...prevForm[key],
-        value: val,
-      },
-    }));
-  };
+  // const user = useAppSelector(getUserInfo);
+
   const navigateOnSuccess = (r: unknown) => {
-    console.log(r);
     router.push("/dashBoard");
   };
   const signInGoogle = () => {
@@ -51,7 +39,9 @@ export const LoginForm = ({}: LoginFormProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Text  variant="h2" className="gradientText">{t("title.appName")}</Text>
+        <Text variant="h2" className="gradientText">
+          {t("title.appName")}
+        </Text>
         <Text variant="subtitle2">{t("title.continue")}</Text>
       </div>
 
