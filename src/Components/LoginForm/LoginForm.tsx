@@ -21,10 +21,9 @@ import { getUserInfo } from "@/Features/Auth/AuthSelectors";
 export const LoginForm = ({}: LoginFormProps) => {
   const { t } = useTranslation();
   const router = useRouter();
-  // const user = useAppSelector(getUserInfo);
 
   const navigateOnSuccess = (r: unknown) => {
-    router.push("/dashBoard");
+    //router.push("/dashBoard");
   };
   const signInGoogle = () => {
     signInWithGoogle()

@@ -11,7 +11,7 @@ const AuthSlice = createSlice({
   initialState,
   reducers: {
     updateUserInfo: (state, action) => {
-      state.user = action.payload.password ?? "";
+      state.user = action.payload ?? null;
     },
     disconnect: (state) => {
       state.user = null;
