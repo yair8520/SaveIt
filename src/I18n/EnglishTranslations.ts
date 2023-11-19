@@ -13,4 +13,12 @@ export const EnglishTranslations = {
   withGoogle: "Continue with Google",
   withFacebook: "Continue with Facebook",
   withEmail: "Or, sign up with your email",
+  sideBar: {
+    settings: "Settings",
+    cards: "Credit Cards",
+    logOut: "LogOut",
+    language: "Language",
+    dark: "Dark Mode",
+    light: "Light Mode",
+  }
 };

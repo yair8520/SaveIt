@@ -7,7 +7,6 @@ import useFirebaseAuth from "@/Hooks/useFirebaseAuth/useFirebaseAuth";
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const user = useAppSelector(getUserInfo);
   useFirebaseAuth();
-  console.log({ user });
 
   return children;
 };
