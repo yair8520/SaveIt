@@ -1,0 +1,1 @@
+export { LangModal } from './LangModal';

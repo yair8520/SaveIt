@@ -3,7 +3,7 @@ export const EnglishTranslations = {
     login: "Login",
     continue: "continue with..",
     alreadyHaveAccount: "Already have an account?",
-    appName:"SaveIt"
+    appName: "SaveIt",
   },
   label: {
     email: "Email",
@@ -15,10 +15,11 @@ export const EnglishTranslations = {
   withEmail: "Or, sign up with your email",
   sideBar: {
     settings: "Settings",
+    account: "Account",
     cards: "Credit Cards",
     logOut: "LogOut",
     language: "Language",
     dark: "Dark Mode",
     light: "Light Mode",
-  }
+  },
 };

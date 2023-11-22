@@ -4,6 +4,8 @@ import { DashBoardContent } from "@/Components/DashBoardContent";
 import { Paper } from "@mui/material";
 
 export default function DashBoard() {
+  //  return <DashBoardContent />;
+
   return (
     <Paper className={styles.container}>
       <div className={styles.bar}>

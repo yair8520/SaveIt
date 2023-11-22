@@ -6,7 +6,7 @@ import { I18nextProvider } from "react-i18next";
 import { AuthProvider } from "../AuthProvider";
 import { darkTheme, lightTheme } from "@/Theme";
 import { useAppSelector } from "@/Redux";
-import { isDarkMode, showModal } from "@/Features/General/GeneralSelectors";
+import { isDarkMode } from "@/Features/General/GeneralSelectors";
 import { Modal } from "../Modal";
 import { ModalContext } from "./ModalContext/ModalContext";
 

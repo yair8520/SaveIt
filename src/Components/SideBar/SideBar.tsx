@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import React, { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -13,23 +13,35 @@ import ListItemText from "@mui/material/ListItemText";
 import { useTranslation } from "react-i18next";
 import { sideBarPages } from "@/Consts/constant";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import { toggleDarkMode } from "@/Features/General/GeneralSlice";
 import { useAppDispatch, useAppSelector } from "@/Redux";
 import { isDarkMode } from "@/Features/General/GeneralSelectors";
-import LightModeIcon from "@mui/icons-material/LightMode";
 import { Drawer, DrawerHeader } from "./SideBarProps";
+import styles from "./SideBar.module.css";
+import { ModalContext } from "../Providers/ModalContext/ModalContext";
+import { useRouter } from "next/navigation";
 
 export const SideBar = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const dispatch = useAppDispatch();
   const isDark = useAppSelector(isDarkMode);
+  const { t } = useTranslation();
+  const { handleModal } = useContext(ModalContext);
+  const router = useRouter();
+
   const toggleTheme = () => {
     dispatch(toggleDarkMode());
+    router.push("/dashBoard/settings");
   };
+
   const handleDrawer = () => {
     setOpen(!open);
   };
-  const { t } = useTranslation();
+  const handleClick = (modal: any) => {
+    modal && handleModal(modal);
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       <Drawer variant="permanent" open={open}>
@@ -40,55 +52,23 @@ export const SideBar = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {sideBarPages.map(({ Icon, text }, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <Icon /> : <Icon />}
+          {sideBarPages.map(({ Icon, text, modal }, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton onClick={() => handleClick(modal)}>
+                <ListItemIcon>
+                  <Icon />
                 </ListItemIcon>
-                <ListItemText
-                  primary={t(`sideBar.${text}`)}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
+                <ListItemText primary={t(`sideBar.${text}`)} />
               </ListItemButton>
             </ListItem>
           ))}
-          <ListItem
-            onClick={() => toggleTheme()}
-            disablePadding
-            sx={{ display: "block" }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
+          <ListItem onClick={toggleTheme} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
                 {isDark ? <DarkModeIcon /> : <LightModeIcon />}
               </ListItemIcon>
               <ListItemText
                 primary={t(`sideBar.${isDark ? "dark" : "light"}`)}
-                sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
           </ListItem>
