@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useContext } from "react";
 import i18n from "@/I18n/i18n.config";
 import { ThemeProvider } from "@emotion/react";
@@ -18,7 +18,7 @@ export const Providers = ({ children }: any) => {
       <ThemeProvider theme={!isDark ? lightTheme : darkTheme}>
         <I18nextProvider i18n={i18n}>
           {children}
-          {modal && <Modal />}
+          {modal ? <Modal /> : null}
         </I18nextProvider>
       </ThemeProvider>
     </AuthProvider>

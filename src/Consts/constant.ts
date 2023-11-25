@@ -15,8 +15,8 @@ type SideBarPage = {
 
 export const sideBarPages: SideBarPage[] = [
   { Icon: DashboardIcon, text: "dashBoard", modal: "/dashBoard" },
-  { Icon: PermIdentityIcon, text: "account", modal: LangModal },
-  { Icon: CreditCardIcon, text: "cards", modal: LangModal },
+  { Icon: PermIdentityIcon, text: "account", modal: "/dashBoard" },
+  { Icon: CreditCardIcon, text: "cards", modal: "/dashBoard" },
   { Icon: SettingsIcon, text: "settings", modal: "/dashBoard/settings" },
   { Icon: LanguageIcon, text: "language", modal: LangModal },
 ];

@@ -42,10 +42,10 @@ export const SideBar = ({ children }: any) => {
   const handleDrawer = () => {
     setOpen(!open);
   };
-  const handleClick = (modal: any) => {
-    if (typeof modal === "string") return router.push(`${modal}`);
+  const handleClick = (Modal: any) => {
+    if (typeof Modal === "string") return router.push(`${Modal}`);
 
-    handleModal(modal);
+    handleModal(<Modal />);
   };
 
   return (
