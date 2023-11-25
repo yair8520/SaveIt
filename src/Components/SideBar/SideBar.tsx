@@ -21,8 +21,9 @@ import { Drawer, DrawerHeader } from "./SideBarProps";
 import styles from "./SideBar.module.css";
 import { ModalContext } from "../Providers/ModalContext/ModalContext";
 import { useRouter } from "next/navigation";
-
-export const SideBar = () => {
+import LogoutIcon from "@mui/icons-material/Logout";
+import { signOut } from "@/Helpers/Auth";
+export const SideBar = ({ children }: any) => {
   const [open, setOpen] = useState(true);
   const dispatch = useAppDispatch();
   const isDark = useAppSelector(isDarkMode);
@@ -33,6 +34,9 @@ export const SideBar = () => {
   const toggleTheme = () => {
     dispatch(toggleDarkMode());
     router.push("/dashBoard/settings");
+  };
+  const logOut = () => {
+    signOut();
   };
 
   const handleDrawer = () => {
@@ -72,8 +76,17 @@ export const SideBar = () => {
               />
             </ListItemButton>
           </ListItem>
+          <ListItem onClick={logOut} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <LogoutIcon />
+              </ListItemIcon>
+              <ListItemText primary={t(`sideBar.logOut`)} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
+      {children}
     </Box>
   );
 };

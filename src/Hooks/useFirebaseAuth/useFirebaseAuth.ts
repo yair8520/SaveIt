@@ -11,9 +11,11 @@ const useFirebaseAuth = (): void => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       dispatch(updateUserInfo(authUser ?? null));
+      console.log(authUser)
       if (authUser) {
-        router.replace("/dashBoard");
+       return router.replace("/dashBoard");
       }
+      router.replace("/login");
     });
 
     return () => {

@@ -1,10 +1,8 @@
 import { auth } from "@/Config/Firebase";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-// export const signOut = () =>
-//   auth()
-//     .signOut()
-//     .then(() => console.log("User signed out!"));
+export const signOut = () =>
+  auth.signOut().then(() => console.log("User signed out!"));
 export const signInWithGoogle = () => {
   return new Promise((resolve, reject) => {
     const provider = new firebase.auth.GoogleAuthProvider();
