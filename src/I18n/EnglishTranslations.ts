@@ -14,6 +14,7 @@ export const EnglishTranslations = {
   withFacebook: "Continue with Facebook",
   withEmail: "Or, sign up with your email",
   sideBar: {
+    dashBoard: "DashBoard",
     settings: "Settings",
     account: "Account",
     cards: "Credit Cards",
@@ -21,5 +22,9 @@ export const EnglishTranslations = {
     language: "Language",
     dark: "Dark Mode",
     light: "Light Mode",
+  },
+  lng: {
+    hebrew: "Hebrew",
+    english: "English",
   },
 };

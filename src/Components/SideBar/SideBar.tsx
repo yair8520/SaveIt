@@ -33,7 +33,7 @@ export const SideBar = ({ children }: any) => {
 
   const toggleTheme = () => {
     dispatch(toggleDarkMode());
-    router.push("/dashBoard/settings");
+    // router.push("/dashBoard/settings");
   };
   const logOut = () => {
     signOut();
@@ -43,7 +43,9 @@ export const SideBar = ({ children }: any) => {
     setOpen(!open);
   };
   const handleClick = (modal: any) => {
-    modal && handleModal(modal);
+    if (typeof modal === "string") return router.push(`${modal}`);
+
+    handleModal(modal);
   };
 
   return (
