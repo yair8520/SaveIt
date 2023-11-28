@@ -18,11 +18,11 @@ import { toggleDarkMode } from "@/Features/General/GeneralSlice";
 import { useAppDispatch, useAppSelector } from "@/Redux";
 import { isDarkMode } from "@/Features/General/GeneralSelectors";
 import { Drawer, DrawerHeader } from "./SideBarProps";
-import styles from "./SideBar.module.css";
 import { ModalContext } from "../Providers/ModalContext/ModalContext";
 import { useRouter } from "next/navigation";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { signOut } from "@/Helpers/Auth";
+
 export const SideBar = ({ children }: any) => {
   const [open, setOpen] = useState(true);
   const dispatch = useAppDispatch();

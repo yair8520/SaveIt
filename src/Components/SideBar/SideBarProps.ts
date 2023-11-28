@@ -45,6 +45,9 @@ export const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   width: drawerWidth,
+  "& .css-15b8vjn-MuiPaper-root-MuiDrawer-paper": {
+    position: "relative !important",
+  },
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
