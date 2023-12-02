@@ -1,0 +1,1 @@
+export { MonthCarouselItem } from './MonthCarouselItem';

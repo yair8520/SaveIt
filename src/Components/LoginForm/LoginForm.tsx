@@ -15,8 +15,6 @@ import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { signInWithFaceBook, signInWithGoogle } from "@/Helpers/Auth";
 import { useRouter } from "next/navigation";
-import { useAppSelector } from "@/Redux";
-import { getUserInfo } from "@/Features/Auth/AuthSelectors";
 
 export const LoginForm = ({}: LoginFormProps) => {
   const { t } = useTranslation();

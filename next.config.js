@@ -1,8 +1,7 @@
-module.exports = {
-    i18n: {
-      locales: ['default', 'en', 'he', 'fr'],
-      defaultLocale: 'default',
-      localeDetection: false,
-    },
-    trailingSlash: true,
-  }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    fastRefresh: true,
+    
+}
+
+module.exports = nextConfig
