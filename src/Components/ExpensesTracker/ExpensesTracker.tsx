@@ -1,23 +1,19 @@
-"use client";
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./ExpensesTracker.module.css";
 import { ExpensesTrackerProps } from "./ExpensesTrackerProps";
-import { useModal } from "@/Hooks/UseModal";
-import { ModalContext } from "../Providers/ModalContext/ModalContext";
-import { MonthCarousel } from "../MonthCarousel";
+import { Card } from "@mui/material";
+import { OverViewChart } from "../OverViewChart";
 import { ExpensesList } from "../ExpensesList";
 
 export const ExpensesTracker = ({}: ExpensesTrackerProps) => {
-  const { handleModal } = useContext(ModalContext);
-
   return (
-    <div className={styles.container}>
+    <Card className={styles.container}>
       <div className={styles.head}>
-        <MonthCarousel />
+        <OverViewChart />
       </div>
       <div className={styles.body}>
         <ExpensesList />
       </div>
-    </div>
+    </Card>
   );
 };

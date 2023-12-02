@@ -5,23 +5,19 @@
 }
 
 .left {
-    width: 60%;
-    height: 100%;
-    gap: 18px;
-
+   flex:2;
 }
 
 .right {
-    height: 100%;
-    width: 40%;
+    flex:1;
 }
 
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .container {
         flex-direction: column;
         width: 100%;
     }
     .left { width: 100%;}
     .right { width: 100%;}
-}
+} */

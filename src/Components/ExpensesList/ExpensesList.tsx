@@ -5,8 +5,8 @@ import { Card } from '@mui/material';
 
 export const ExpensesList = ({}: ExpensesListProps) => {
   return (
-    <Card className={styles.container}>
+    <div className={styles.container}>
       <h1>ExpensesListPage component</h1>
-    </Card>
+    </div>
   );
 };

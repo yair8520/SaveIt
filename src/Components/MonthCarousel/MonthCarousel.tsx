@@ -3,7 +3,6 @@ import styles from "./MonthCarousel.module.css";
 import { MonthCarouselProps } from "./MonthCarouselProps";
 import Carousel from "react-material-ui-carousel";
 import { MonthCarouselItem } from "../MonthCarouselItem";
-import { Card } from "@mui/material";
 import { months } from "@/Consts/constant";
 
 export const MonthCarousel = ({}: MonthCarouselProps) => {
@@ -12,7 +11,7 @@ export const MonthCarousel = ({}: MonthCarouselProps) => {
     if (i !== undefined) setCurrentIndex(i);
   };
   return (
-    <Card className={styles.container}>
+    <div className={styles.container}>
       <Carousel
         onChange={(i) => updateIndex(i)}
         fullHeightHover={false}
@@ -23,6 +22,6 @@ export const MonthCarousel = ({}: MonthCarouselProps) => {
           <MonthCarouselItem key={i} text={months[currentIndex]} />
         ))}
       </Carousel>
-    </Card>
+    </div>
   );
 };
