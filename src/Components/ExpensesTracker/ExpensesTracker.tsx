@@ -7,12 +7,21 @@ import { ExpensesList } from "../ExpensesList";
 
 export const ExpensesTracker = ({}: ExpensesTrackerProps) => {
   return (
-    <Card className={styles.container}>
+    <Card  className={styles.container}>
       <div className={styles.head}>
         <OverViewChart />
       </div>
       <div className={styles.body}>
         <ExpensesList />
+        {/* <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList />
+        <ExpensesList /> */}
       </div>
     </Card>
   );

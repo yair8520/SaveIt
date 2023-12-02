@@ -1,11 +1,13 @@
-import React from 'react';
-import styles from './OverViewChart.module.css';
-import { OverViewChartProps } from './OverViewChartProps';
+import React from "react";
+import styles from "./OverViewChart.module.css";
+import { OverViewChartProps } from "./OverViewChartProps";
+import { Card } from "@mui/material";
+import { Text } from "../Text";
 
 export const OverViewChart = ({}: OverViewChartProps) => {
   return (
-    <div className={styles.container}>
-      <h1>OverViewChartPage component</h1>
-    </div>
+    <Card className={styles.container}>
+      <Text>OverView</Text>
+    </Card>
   );
 };

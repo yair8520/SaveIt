@@ -1,2 +1,10 @@
 .container {
+    height: 100%;
+    width: 70%;
+    opacity: 0.9;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
